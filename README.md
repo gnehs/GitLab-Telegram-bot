@@ -22,15 +22,15 @@ GPT-4-0314 寫的，有問題不要找我，自己去找他修，就這樣。
    - `TELEGRAM_BOT_TOKEN`: 您的 Telegram Bot Token
    - `TELEGRAM_CHANNEL_ID`: 要發送訊息的 Telegram 頻道 ID（例如：-1001962261708）
    - `GITLAB_FEED_URL`: GitLab RSS 連結（例如：https://gitlab.com/HacksInTaiwan/2023/board.atom?feed_token=xxxxxx）
-4. 在與 `gitlab-telegram-bot.js` 相同的目錄中創建一個名為 `sent_issues.json` 的文件，並將其初始內容設置為 `[]`。
+4. 在與 `index.js` 相同的目錄中創建一個名為 `sent_issues.json` 的文件，並將其初始內容設置為 `[]`。
 5. 在命令行中設置環境變數並運行此文件以啟動機器人（根據您的操作系統選擇相應的命令）：
    - 對於 Unix/Linux/macOS：
      ```
-     TELEGRAM_BOT_TOKEN=your_bot_token TELEGRAM_CHANNEL_ID=-1001962261708 GITLAB_FEED_URL=https://gitlab.com/HacksInTaiwan/2023/board.atom?feed_token=xxxxxx node gitlab-telegram-bot.js
+     TELEGRAM_BOT_TOKEN=your_bot_token TELEGRAM_CHANNEL_ID=-1001962261708 GITLAB_FEED_URL=https://gitlab.com/HacksInTaiwan/2023/board.atom?feed_token=xxxxxx node index.js
      ```
    - 對於 Windows：
      ```
-     set TELEGRAM_BOT_TOKEN=your_bot_token && set TELEGRAM_CHANNEL_ID=-1001962261708 && set GITLAB_FEED_URL=https://gitlab.com/HacksInTaiwan/2023/board.atom?feed_token=xxxxxx && node gitlab-telegram-bot.js
+     set TELEGRAM_BOT_TOKEN=your_bot_token && set TELEGRAM_CHANNEL_ID=-1001962261708 && set GITLAB_FEED_URL=https://gitlab.com/HacksInTaiwan/2023/board.atom?feed_token=xxxxxx && node index.js
      ```
 
 現在機器人將每分鐘獲取 GitLab issue 動態，並將它們發送到指定的 Telegram 頻道。
