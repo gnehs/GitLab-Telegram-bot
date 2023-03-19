@@ -61,8 +61,10 @@ async function sendGitLabIssuesToTelegram() {
   for (let issue of issues) {
     // 檢查 issue 是否已經發送過
     if (!sentIssueIds.has(issue.id)) {
-      const message = `<b>🆕 Issue 更新！</b><br><br><a href="${issue.link}">Title: ${issue.title}</a><br>Updated: ${issue.updated}<br>Summary: ${issue.summary}`;
-      await bot.telegram.sendMessage(CHANNEL_ID, message, { parse_mode: 'HTML' });
+      const message = `<b>🆕 Issue 更新！</b>\n\n<a href="${issue.link}">Title: ${issue.title}</a>\nUpdated: ${issue.updated}\nSummary: ${issue.summary}`;
+      await bot.telegram.sendMessage(CHANNEL_ID, message, { parse_mode: 'HTML' }).catch((error) => {
+        console.error(`Error sending message: ${error.message}`);
+      });
       // 將 issue ID 添加到已發送集合中，並更新 JSON 文件
       saveSentIssueId(issue.id);
     }
