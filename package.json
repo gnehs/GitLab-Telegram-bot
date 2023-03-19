@@ -1,0 +1,25 @@
+{
+  "name": "gitlab-telegram-bot",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gnehs/GitLab-Telegram-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gnehs/GitLab-Telegram-bot/issues"
+  },
+  "homepage": "https://github.com/gnehs/GitLab-Telegram-bot#readme",
+  "dependencies": {
+    "jsdom": "^21.1.1",
+    "node-fetch": "^3.3.1",
+    "telegraf": "^4.12.2"
+  }
+}
